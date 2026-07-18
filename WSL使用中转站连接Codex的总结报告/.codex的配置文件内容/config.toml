@@ -1,0 +1,26 @@
+model_provider = "crs"
+model = "gpt-5.5"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+model_reasoning_effort = "medium"
+service_tier = "priority"
+disable_response_storage = true
+preferred_auth_method = "apikey"
+
+[model_providers.crs]
+name = "crs"
+base_url = "https://nexusacc.itssx.com/api/codex/codex"
+wire_api = "responses"
+requires_openai_auth = false
+env_key = "CRS_OAI_KEY"
+supports_websockets = false
+
+[features]
+apps = false
+fast_mode = false
+
+[projects."/home/ds-wangxu"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.5" = 3
